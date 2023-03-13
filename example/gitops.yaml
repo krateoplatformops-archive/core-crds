@@ -1,0 +1,23 @@
+apiVersion: krateo.io/v1alpha1
+kind: GitOps
+metadata:
+  name: busybox-gitops
+spec:
+  title: "BusyBox sample gitops"
+  icon: "fa-brands fa-git"
+  owner: "krateo.io"
+  targetRepo:
+    url: https://github.com/krateoplatformops/del-1
+    authMethod: basic
+    secretRef:
+      namespace: default
+      name: github.com-secret
+      key: token
+  chartUrl: https://krateoplatformops.github.io/busybox-chart/busybox-chart-0.1.0.tgz
+  values:
+    - name: name
+      value: "example-gitops"
+    - name: namespace
+      value: "test"
+    - name: limit
+      value: "5"

@@ -1,0 +1,16 @@
+apiVersion: krateo.io/v1alpha1
+kind: Deployment
+metadata:
+  name: busybox-deployment
+spec:
+  title: "BusyBox sample deployment"
+  icon: "fa-solid fa-arrows-spin"
+  owner: "krateo.io"
+  chartUrl: https://krateoplatformops.github.io/busybox-chart/busybox-chart-0.1.0.tgz
+  values:
+    - name: name
+      value: "example-deployment"
+    - name: namespace
+      value: "test"
+    - name: limit
+      value: "3"
